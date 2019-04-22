@@ -13,7 +13,7 @@
         <!--Code View Controller-->
         <scene sceneID="bKn-Kp-tja">
             <objects>
-                <viewController id="nYK-vm-NXJ" customClass="QRCodeViewController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nYK-vm-NXJ" customClass="QRCodeViewController" customModule="DGQRcodeScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WhE-Cr-zXs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,26 +36,42 @@
                                     <segue destination="tkV-Dt-PJX" kind="presentation" id="Kuq-nk-esP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to open scanner" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCv-HR-Jql">
+                                <rect key="frame" x="107" y="86.5" width="161.5" height="38.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="28"/>
+                                <color key="textColor" red="0.0023483396510000001" green="0.25907140969999998" blue="0.42393139000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="open" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUg-or-REL">
+                                <rect key="frame" x="161" y="365" width="52" height="39"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="28"/>
+                                <color key="textColor" red="0.0023483396510000001" green="0.25907140969999998" blue="0.42393139000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.58028337289999998" green="0.72148281339999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="wCv-HR-Jql" firstAttribute="top" secondItem="FJL-RP-7wB" secondAttribute="bottom" constant="-16" id="0UI-23-n0s"/>
+                            <constraint firstItem="rUg-or-REL" firstAttribute="centerX" secondItem="62q-fJ-rOX" secondAttribute="centerX" id="0zo-Gb-FBg"/>
                             <constraint firstItem="FJL-RP-7wB" firstAttribute="leading" secondItem="HQD-X9-D8X" secondAttribute="leading" id="2P4-Bn-mSs"/>
                             <constraint firstItem="FJL-RP-7wB" firstAttribute="top" secondItem="HQD-X9-D8X" secondAttribute="top" constant="14" id="74E-qV-eji"/>
                             <constraint firstItem="62q-fJ-rOX" firstAttribute="centerX" secondItem="HQD-X9-D8X" secondAttribute="centerX" id="Oyc-UC-0nz"/>
+                            <constraint firstItem="wCv-HR-Jql" firstAttribute="centerX" secondItem="FJL-RP-7wB" secondAttribute="centerX" id="POK-ao-4Vd"/>
                             <constraint firstItem="62q-fJ-rOX" firstAttribute="centerY" secondItem="WhE-Cr-zXs" secondAttribute="centerY" id="XOM-Lx-VzJ"/>
                             <constraint firstItem="HQD-X9-D8X" firstAttribute="trailing" secondItem="FJL-RP-7wB" secondAttribute="trailing" id="gSf-em-FKU"/>
+                            <constraint firstItem="rUg-or-REL" firstAttribute="top" secondItem="62q-fJ-rOX" secondAttribute="bottom" constant="-8.5" id="kXN-bR-yNZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HQD-X9-D8X"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2q-dK-fDR" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-206" y="135"/>
+            <point key="canvasLocation" x="-207.19999999999999" y="134.48275862068968"/>
         </scene>
         <!--Scanner Controller-->
         <scene sceneID="XHU-2y-HTM">
             <objects>
-                <viewController id="tkV-Dt-PJX" customClass="QRScannerController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tkV-Dt-PJX" customClass="QRScannerController" customModule="DGQRcodeScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sCh-j0-9zK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
