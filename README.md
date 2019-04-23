@@ -6,7 +6,7 @@
 2. Drag and drop Scanner folder on your project.
 3. Implement Code as following  
 ```
-let scanner = QRScannerController.show()
+let scanner = DGQRCodeScanner.show()
  scanner?.onSuccess = { [weak self] result in
             self?.messageLabel.text = "Result from Scan is \n \(result)"
         }
