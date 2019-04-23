@@ -27,7 +27,7 @@ fileprivate func delayFor(_ seconds: Double = 0.3, then: @escaping () -> ()) {
     }
 }
 
-class QRScannerController: UIViewController {
+class DGQRCodeScanner: UIViewController {
     
     @IBOutlet var titleLabel:UILabel!
     @IBOutlet var messageLabel:UILabel!
@@ -63,8 +63,8 @@ class QRScannerController: UIViewController {
     var onFailure : (() -> ())?
     
     //MARK:- init
-    public class func show()-> QRScannerController? {
-        let viewController: QRScannerController = QRScannerController.loadFromNib()
+    public class func show()-> DGQRCodeScanner? {
+        let viewController: DGQRCodeScanner = DGQRCodeScanner.loadFromNib()
         if let presentController = presentController() {
             presentController.present(viewController, animated:true, completion: nil)
         }
@@ -186,7 +186,7 @@ class QRScannerController: UIViewController {
 }
 
 //MARK:- Video outup delegate
-extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
+extension DGQRCodeScanner: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         

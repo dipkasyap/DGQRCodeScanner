@@ -1,7 +1,7 @@
 
 import UIKit
 
-class QRCodeViewController: UIViewController {
+class ViewController: UIViewController {
 
     @IBOutlet var messageLabel:UILabel!
 
@@ -21,7 +21,7 @@ class QRCodeViewController: UIViewController {
     }
     
     @IBAction func show(_ sender: UIButton) {
-        let scanner =   QRScannerController.show()
+        let scanner = DGQRCodeScanner.show()
         scanner?.onSuccess = { [weak self] result in
             self?.messageLabel.text = "Result from Scan is \n \(result)"
         }
