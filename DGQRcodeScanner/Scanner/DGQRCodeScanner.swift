@@ -8,16 +8,29 @@ fileprivate extension UIViewController {
     }
 }
 
-fileprivate func presentController()-> UIViewController? {
-    if var topController = UIApplication.shared.keyWindow?.rootViewController {
-        while let presentedViewController = topController.presentedViewController {
-            topController = presentedViewController
+//fileprivate func presentController()-> UIViewController? {
+//    if var topController = UIApplication.shared.keyWindow?.rootViewController {
+//        while let presentedViewController = topController.presentedViewController {
+//            topController = presentedViewController
+//        }
+//        return topController
+//    } else {
+//        return nil
+//    }
+//}
+
+
+func presentController() -> UIViewController? {
+    if let rootController = UIApplication.shared.keyWindow?.rootViewController {
+        var currentController: UIViewController! = rootController
+        while(currentController.presentedViewController != nil ) {
+            currentController = currentController.presentedViewController
         }
-        return topController
-    } else {
-        return nil
+        return currentController
     }
+    return nil
 }
+
 
 
 
