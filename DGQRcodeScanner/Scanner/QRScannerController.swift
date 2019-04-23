@@ -2,14 +2,42 @@
 import UIKit
 import AVFoundation
 
+fileprivate extension UIViewController {
+    class func loadFromNib<T: UIViewController>() -> T {
+        return T(nibName: String(describing: self), bundle: nil)
+    }
+}
+
+fileprivate func presentController()-> UIViewController? {
+    if var topController = UIApplication.shared.keyWindow?.rootViewController {
+        while let presentedViewController = topController.presentedViewController {
+            topController = presentedViewController
+        }
+        return topController
+    } else {
+        return nil
+    }
+}
+
+
+
+fileprivate func delayFor(_ seconds: Double = 0.3, then: @escaping () -> ()) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+        then()
+    }
+}
+
 class QRScannerController: UIViewController {
     
+    @IBOutlet var titleLabel:UILabel!
     @IBOutlet var messageLabel:UILabel!
     @IBOutlet var topbar: UIView!
     @IBOutlet weak var bottomBar: UIView!
     
-    var captureSession = AVCaptureSession()
     
+    var captureSession = AVCaptureSession()
+    var captureMetadataOutput: AVCaptureMetadataOutput!
+
     var themeColor = UIColor(red:0.00, green:0.80, blue:0.80, alpha:1.0)
     
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
@@ -34,13 +62,24 @@ class QRScannerController: UIViewController {
     var onSuccess : ((_ url: String) -> ())?
     var onFailure : (() -> ())?
     
-    
+    //MARK:- init
+    public class func show()-> QRScannerController? {
+        let viewController: QRScannerController = QRScannerController.loadFromNib()
+        if let presentController = presentController() {
+            presentController.present(viewController, animated:true, completion: nil)
+        }
+        return viewController
+    }
     
     //MARK:- Viewcycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        videoPreviewLayer?.frame = view.layer.bounds
     }
     
     //MARK:- setup
@@ -86,13 +125,13 @@ class QRScannerController: UIViewController {
             captureSession.addInput(input)
             
             // Initialize a AVCaptureMetadataOutput object and set it as the output device to the capture session.
-            let captureMetadataOutput = AVCaptureMetadataOutput()
+            captureMetadataOutput = AVCaptureMetadataOutput()
             captureSession.addOutput(captureMetadataOutput)
             
             // Set delegate and use the default dispatch queue to execute the call back
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
-            // captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+            //captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
             
             return true
             
@@ -139,6 +178,11 @@ class QRScannerController: UIViewController {
             }
         }
     }
+    
+    //MARK:- action
+    @IBAction private  func close() {
+        dismiss(animated: true, completion: onFailure)
+    }
 }
 
 //MARK:- Video outup delegate
@@ -161,18 +205,27 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
             qrCodeFrameView?.frame = barCodeObject!.bounds
             
             if let text = metadataObj.stringValue {
-                doWithText(text)
+               
+                messageLabel.text = nil
+                captureMetadataOutput.setMetadataObjectsDelegate(nil, queue: DispatchQueue.main)
+
+                delayFor { [weak self] in
+                    self?.doWithText(text)
+                    self?.captureSession.stopRunning()
+                }
+     
             } else {
                 doWithText("cannot read the QR")
             }
         }
+        
     }
     
     private func doWithText(_ text: String?) {
-        
         if let text = text {
             complition(value: text)
             messageLabel.text = nil
+            dismiss(animated: true, completion: nil)
         } else {
             qrCodeFrameView?.frame = CGRect.zero
             messageLabel.text = "No QR code is detected"

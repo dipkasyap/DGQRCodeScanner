@@ -3,6 +3,8 @@ import UIKit
 
 class QRCodeViewController: UIViewController {
 
+    @IBOutlet var messageLabel:UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -17,5 +19,11 @@ class QRCodeViewController: UIViewController {
     @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
     }
-
+    
+    @IBAction func show(_ sender: UIButton) {
+        let scanner =   QRScannerController.show()
+        scanner?.onSuccess = { [weak self] result in
+            self?.messageLabel.text = "Result from Scan is \n \(result)"
+        }
+    }
 }

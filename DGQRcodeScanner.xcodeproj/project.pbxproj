@@ -15,6 +15,10 @@
 		7717B40F226846F800152B95 /* DGQRcodeScannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717B40E226846F800152B95 /* DGQRcodeScannerUITests.swift */; };
 		7717B41E2268474700152B95 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717B41C2268474700152B95 /* QRCodeViewController.swift */; };
 		7717B41F2268474700152B95 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717B41D2268474700152B95 /* QRScannerController.swift */; };
+		77D3C12A226E8B9100B87020 /* QRScannerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D3C129226E8B9100B87020 /* QRScannerController.xib */; };
+		77D3C12E226E9ED900B87020 /* cross@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77D3C12B226E9ED800B87020 /* cross@3x.png */; };
+		77D3C12F226E9ED900B87020 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77D3C12C226E9ED900B87020 /* cross@2x.png */; };
+		77D3C130226E9ED900B87020 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 77D3C12D226E9ED900B87020 /* cross.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		7717B410226846F800152B95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7717B41C2268474700152B95 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		7717B41D2268474700152B95 /* QRScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
+		77D3C129226E8B9100B87020 /* QRScannerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRScannerController.xib; sourceTree = "<group>"; };
+		77D3C12B226E9ED800B87020 /* cross@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@3x.png"; sourceTree = "<group>"; };
+		77D3C12C226E9ED900B87020 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
+		77D3C12D226E9ED900B87020 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		7717B3ED226846F600152B95 /* DGQRcodeScanner */ = {
 			isa = PBXGroup;
 			children = (
+				7717B41C2268474700152B95 /* QRCodeViewController.swift */,
 				7717B4202268475000152B95 /* Scanner */,
 				7717B3EE226846F600152B95 /* AppDelegate.swift */,
 				7717B3F2226846F600152B95 /* Main.storyboard */,
@@ -130,10 +139,21 @@
 		7717B4202268475000152B95 /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
-				7717B41C2268474700152B95 /* QRCodeViewController.swift */,
+				77D3C131226E9EE000B87020 /* images */,
 				7717B41D2268474700152B95 /* QRScannerController.swift */,
+				77D3C129226E8B9100B87020 /* QRScannerController.xib */,
 			);
 			path = Scanner;
+			sourceTree = "<group>";
+		};
+		77D3C131226E9EE000B87020 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				77D3C12D226E9ED900B87020 /* cross.png */,
+				77D3C12C226E9ED900B87020 /* cross@2x.png */,
+				77D3C12B226E9ED800B87020 /* cross@3x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,9 +260,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77D3C130226E9ED900B87020 /* cross.png in Resources */,
+				77D3C12E226E9ED900B87020 /* cross@3x.png in Resources */,
 				7717B3F9226846F700152B95 /* LaunchScreen.storyboard in Resources */,
+				77D3C12A226E8B9100B87020 /* QRScannerController.xib in Resources */,
 				7717B3F6226846F700152B95 /* Assets.xcassets in Resources */,
 				7717B3F4226846F600152B95 /* Main.storyboard in Resources */,
+				77D3C12F226E9ED900B87020 /* cross@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
