@@ -12,7 +12,7 @@ let scanner = DGQRCodeScanner.show()
         }
 ```
 ## Important 
-DO NOT forgot to provide access messege on plist.
+DO NOT forget to provide access messege on plist.
 just go to info.plist file , do right click -> open as -> source code and add following line below <dict> 
 ```
     <key>NSCameraUsageDescription</key>
