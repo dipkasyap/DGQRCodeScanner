@@ -16,9 +16,7 @@
 		7717B41E2268474700152B95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717B41C2268474700152B95 /* ViewController.swift */; };
 		7717B41F2268474700152B95 /* DGQRCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717B41D2268474700152B95 /* DGQRCodeScanner.swift */; };
 		77D3C12A226E8B9100B87020 /* DGQRCodeScanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D3C129226E8B9100B87020 /* DGQRCodeScanner.xib */; };
-		77D3C12E226E9ED900B87020 /* cross@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77D3C12B226E9ED800B87020 /* cross@3x.png */; };
-		77D3C12F226E9ED900B87020 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77D3C12C226E9ED900B87020 /* cross@2x.png */; };
-		77D3C130226E9ED900B87020 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 77D3C12D226E9ED900B87020 /* cross.png */; };
+		77D3C149226EB4FA00B87020 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77D3C148226EB4FA00B87020 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +52,7 @@
 		7717B41C2268474700152B95 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7717B41D2268474700152B95 /* DGQRCodeScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGQRCodeScanner.swift; sourceTree = "<group>"; };
 		77D3C129226E8B9100B87020 /* DGQRCodeScanner.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DGQRCodeScanner.xib; sourceTree = "<group>"; };
-		77D3C12B226E9ED800B87020 /* cross@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@3x.png"; sourceTree = "<group>"; };
-		77D3C12C226E9ED900B87020 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
-		77D3C12D226E9ED900B87020 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		77D3C148226EB4FA00B87020 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,9 +145,7 @@
 		77D3C131226E9EE000B87020 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				77D3C12D226E9ED900B87020 /* cross.png */,
-				77D3C12C226E9ED900B87020 /* cross@2x.png */,
-				77D3C12B226E9ED800B87020 /* cross@3x.png */,
+				77D3C148226EB4FA00B87020 /* Images.xcassets */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -260,13 +254,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77D3C130226E9ED900B87020 /* cross.png in Resources */,
-				77D3C12E226E9ED900B87020 /* cross@3x.png in Resources */,
 				7717B3F9226846F700152B95 /* LaunchScreen.storyboard in Resources */,
 				77D3C12A226E8B9100B87020 /* DGQRCodeScanner.xib in Resources */,
+				77D3C149226EB4FA00B87020 /* Images.xcassets in Resources */,
 				7717B3F6226846F700152B95 /* Assets.xcassets in Resources */,
 				7717B3F4226846F600152B95 /* Main.storyboard in Resources */,
-				77D3C12F226E9ED900B87020 /* cross@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

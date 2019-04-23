@@ -33,24 +33,9 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5t-fr-AQh">
-                            <rect key="frame" x="15" y="39" width="18" height="18"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="18" id="LZD-xw-gSs"/>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="X9w-iq-ped"/>
-                                <constraint firstAttribute="height" constant="18" id="Xy5-ue-EWD"/>
-                            </constraints>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="cross"/>
-                            <connections>
-                                <action selector="close" destination="-1" eventType="touchUpInside" id="Uh8-EB-XIL"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="f5t-fr-AQh" secondAttribute="bottom" constant="13" id="Bgj-dJ-DqT"/>
-                        <constraint firstItem="f5t-fr-AQh" firstAttribute="leading" secondItem="caF-eG-4hz" secondAttribute="leading" constant="15" id="KIO-Jn-w58"/>
                         <constraint firstAttribute="bottom" secondItem="Bhb-51-nwp" secondAttribute="bottom" constant="8" id="bAW-Z7-krg"/>
                         <constraint firstAttribute="height" constant="70" id="pkN-8a-sOp"/>
                         <constraint firstItem="Bhb-51-nwp" firstAttribute="centerX" secondItem="caF-eG-4hz" secondAttribute="centerX" id="tTb-ra-qXL"/>
@@ -58,9 +43,24 @@
                 </view>
                 <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dj6-az-Ffw">
                     <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5t-fr-AQh">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Dismiss"/>
+                            <connections>
+                                <action selector="close" destination="-1" eventType="touchUpInside" id="Uh8-EB-XIL"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="f5t-fr-AQh" secondAttribute="trailing" id="Sud-IR-Jng"/>
+                        <constraint firstAttribute="bottom" secondItem="f5t-fr-AQh" secondAttribute="bottom" id="cZ3-zr-Zjj"/>
                         <constraint firstAttribute="height" constant="70" id="etJ-cD-z7I"/>
+                        <constraint firstItem="f5t-fr-AQh" firstAttribute="leading" secondItem="dj6-az-Ffw" secondAttribute="leading" id="f1f-Xs-MfS"/>
+                        <constraint firstItem="f5t-fr-AQh" firstAttribute="top" secondItem="dj6-az-Ffw" secondAttribute="top" id="mZU-vD-8qt"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR Code not Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lz5-IM-15Z">
@@ -90,7 +90,4 @@
             <point key="canvasLocation" x="268" y="-9"/>
         </view>
     </objects>
-    <resources>
-        <image name="cross" width="16" height="16"/>
-    </resources>
 </document>

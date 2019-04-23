@@ -51,8 +51,9 @@ class DGQRCodeScanner: UIViewController {
     var captureSession = AVCaptureSession()
     var captureMetadataOutput: AVCaptureMetadataOutput!
 
-    var themeColor = UIColor(red:0.00, green:0.80, blue:0.80, alpha:1.0)
-    
+    var themeColor = UIColor.black //UIColor(red:0.00, green:0.80, blue:0.80, alpha:1.0)
+    var captureBoxColor = UIColor(red:0.00, green:0.80, blue:0.80, alpha:1.0)
+
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
     
@@ -171,7 +172,7 @@ class DGQRCodeScanner: UIViewController {
         qrCodeFrameView = UIView()
         
         if let qrCodeFrameView = qrCodeFrameView {
-            qrCodeFrameView.layer.borderColor = themeColor.cgColor // mportGreen
+            qrCodeFrameView.layer.borderColor = captureBoxColor.cgColor // mportGreen
             qrCodeFrameView.layer.borderWidth = 4
             qrCodeFrameView.layer.cornerRadius = 10
             view.addSubview(qrCodeFrameView)
